@@ -1,0 +1,43 @@
+From a268e99db784d71baa89603fd13e4cfa164d2525 Mon Sep 17 00:00:00 2001
+From: dineshkumar <dineshkumar.varadarajan@adlinktech.com>
+Date: Wed, 15 Sep 2021 22:49:04 +0530
+Subject: [PATCH 3/3] GPIO Mapping and SDIO detection
+
+---
+ drivers/net/wireless/bcmdhd/Makefile   | 2 ++
+ drivers/net/wireless/bcmdhd/dhd_gpio.c | 4 ++--
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/net/wireless/bcmdhd/Makefile b/drivers/net/wireless/bcmdhd/Makefile
+index e83cbcf08258..6295682589ab 100755
+--- a/drivers/net/wireless/bcmdhd/Makefile
++++ b/drivers/net/wireless/bcmdhd/Makefile
+@@ -275,7 +275,9 @@ ifeq ($(CONFIG_MACH_PLATFORM),y)
+ ifeq ($(CONFIG_BCMDHD_DTS),y)
+ 	DHDCFLAGS += -DBCMDHD_DTS
+ endif
++	DHDOFILES += dhd_gpio.o
+ 	DHDCFLAGS += -DCUSTOMER_HW -DDHD_OF_SUPPORT
++	DHDCFLAGS += -DCUSTOMER_HW_PLATFORM
+ endif
+ 
+ ifeq ($(CONFIG_BCMDHD_AG),y)
+diff --git a/drivers/net/wireless/bcmdhd/dhd_gpio.c b/drivers/net/wireless/bcmdhd/dhd_gpio.c
+index 1f2616ae7ed4..3fc91e5e59ca 100755
+--- a/drivers/net/wireless/bcmdhd/dhd_gpio.c
++++ b/drivers/net/wireless/bcmdhd/dhd_gpio.c
+@@ -277,9 +277,9 @@ int dhd_wlan_init_gpio(void)
+ 	} else
+ #endif
+ 	{
+-		gpio_wl_reg_on = -1;
++		gpio_wl_reg_on = 119;
+ #ifdef CUSTOMER_OOB
+-		gpio_wl_host_wake = -1;
++		gpio_wl_host_wake = 122;
+ #endif
+ 	}
+ 
+-- 
+2.17.1
+

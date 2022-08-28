@@ -1,0 +1,23 @@
+diff --git a/arch/arm64/boot/dts/rockchip/px30-evb-ddr3-v10-linux.dts b/arch/arm64/boot/dts/rockchip/px30-evb-ddr3-v10-linux.dts
+index 7996ddeb39e6..35186fd9e118 100644
+--- a/arch/arm64/boot/dts/rockchip/px30-evb-ddr3-v10-linux.dts
++++ b/arch/arm64/boot/dts/rockchip/px30-evb-ddr3-v10-linux.dts
+@@ -1450,6 +1450,18 @@
+         status = "disabled";
+ };
+ 
++&spi0 {
++	status = "okay";
++};
++
++&i2c0 {
++	status = "okay";
++};
++
++&i2c1 {
++	status = "okay";
++};
++
+ &u2phy {
+ 	status = "okay";
+ 

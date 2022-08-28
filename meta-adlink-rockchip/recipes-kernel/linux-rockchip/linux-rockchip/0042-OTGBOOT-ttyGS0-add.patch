@@ -1,0 +1,13 @@
+diff --git a/arch/arm64/boot/dts/rockchip/rk3326-linux.dtsi b/arch/arm64/boot/dts/rockchip/rk3326-linux.dtsi
+index 3a1931173c39..05b7dde99f13 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3326-linux.dtsi
++++ b/arch/arm64/boot/dts/rockchip/rk3326-linux.dtsi
+@@ -45,7 +45,7 @@
+ 
+ 	chosen {
+  		//bootargs = "earlycon=uart8250,mmio32,0xff160000 swiotlb=1 console=ttyFIQ0 rw root=PARTUUID=614e0000-0000 rootwait";
+-		bootargs = "earlycon=uart8250,mmio32,0xff160000 swiotlb=1 console=ttyS0 rw root=/dev/mmcblk1p8 rootwait";
++		bootargs = "mmio32,0xff160000 swiotlb=1 console=ttyGS0,115200 rw root=/dev/mmcblk1p8 rootwait";
+ 	/*	 bootargs = "console=tty1 rw root=PARTUUID=614e0000-0000 rootwait";*/
+ 	};
+ 

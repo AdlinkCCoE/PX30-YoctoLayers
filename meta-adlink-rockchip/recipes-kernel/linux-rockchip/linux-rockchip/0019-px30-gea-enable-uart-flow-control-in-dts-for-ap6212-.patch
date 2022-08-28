@@ -1,0 +1,27 @@
+From 894099972d01c614932bcf1b54dd11f7477e4b75 Mon Sep 17 00:00:00 2001
+From: Santhana Kumar A <santhanakumar.a@adlinktech.com>
+Date: Fri, 19 Nov 2021 13:55:06 +0530
+Subject: [PATCH] px30-gea: enable uart flow control in dts for ap6212
+ bluetooth
+
+Signed-off-by: Santhana Kumar A <santhanakumar.a@adlinktech.com>
+---
+ arch/arm64/boot/dts/rockchip/px30-evb-ddr3-v10-linux.dts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/arch/arm64/boot/dts/rockchip/px30-evb-ddr3-v10-linux.dts b/arch/arm64/boot/dts/rockchip/px30-evb-ddr3-v10-linux.dts
+index 1f1190da9f64..ec14fc560649 100644
+--- a/arch/arm64/boot/dts/rockchip/px30-evb-ddr3-v10-linux.dts
++++ b/arch/arm64/boot/dts/rockchip/px30-evb-ddr3-v10-linux.dts
+@@ -1429,7 +1429,7 @@
+ 
+ &uart1 {
+ 	pinctrl-names = "default";
+-	pinctrl-0 = <&uart1_xfer /*&uart1_cts &uart1_rts*/>;
++	pinctrl-0 = <&uart1_xfer &uart1_cts &uart1_rts>;
+ 	status = "okay";
+ };
+ 
+-- 
+2.25.1
+

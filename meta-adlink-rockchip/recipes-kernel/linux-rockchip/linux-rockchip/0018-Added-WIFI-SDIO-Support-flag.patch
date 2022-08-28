@@ -1,0 +1,34 @@
+From 6ef4a166b9aa99285bf78058f9a9ed5c0e21c71b Mon Sep 17 00:00:00 2001
+From: dineshkumar <dineshkumar.varadarajan@adlinktech.com>
+Date: Fri, 17 Sep 2021 11:28:03 +0530
+Subject: [PATCH 4/4] Added WIFI SDIO Support flag
+
+---
+ drivers/net/wireless/bcmdhd/dhd_gpio.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/net/wireless/bcmdhd/dhd_gpio.c b/drivers/net/wireless/bcmdhd/dhd_gpio.c
+index 3fc91e5e59ca..78fb47d918e8 100755
+--- a/drivers/net/wireless/bcmdhd/dhd_gpio.c
++++ b/drivers/net/wireless/bcmdhd/dhd_gpio.c
+@@ -118,7 +118,7 @@ static int dhd_wlan_set_carddetect(int present)
+ 	if (present) {
+ #if defined(BCMSDIO)
+ 		printf("======== Card detection to detect SDIO card! ========\n");
+-#ifdef CUSTOMER_HW_PLATFORM
++#ifdef DCUSTOMER_HW_PLATFORM
+ 		err = sdhci_force_presence_change(&sdmmc_channel, 1);
+ #endif /* CUSTOMER_HW_PLATFORM */
+ #elif defined(BCMPCIE)
+@@ -127,7 +127,7 @@ static int dhd_wlan_set_carddetect(int present)
+ 	} else {
+ #if defined(BCMSDIO)
+ 		printf("======== Card detection to remove SDIO card! ========\n");
+-#ifdef CUSTOMER_HW_PLATFORM
++#ifdef DCUSTOMER_HW_PLATFORM
+ 		err = sdhci_force_presence_change(&sdmmc_channel, 0);
+ #endif /* CUSTOMER_HW_PLATFORM */
+ #elif defined(BCMPCIE)
+-- 
+2.17.1
+

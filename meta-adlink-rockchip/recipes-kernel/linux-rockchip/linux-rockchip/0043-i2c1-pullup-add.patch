@@ -1,0 +1,13 @@
+diff --git a/arch/arm64/boot/dts/rockchip/lec-px30.dtsi b/arch/arm64/boot/dts/rockchip/lec-px30.dtsi
+index 7fc38283b290..992212936aa3 100644
+--- a/arch/arm64/boot/dts/rockchip/lec-px30.dtsi
++++ b/arch/arm64/boot/dts/rockchip/lec-px30.dtsi
+@@ -2026,7 +2026,7 @@
+ 			i2c1_xfer: i2c1-xfer {
+ 				rockchip,pins =
+ 					<0 RK_PC2 RK_FUNC_1 &pcfg_pull_none_smt>,
+-					<0 RK_PC3 RK_FUNC_1 &pcfg_pull_none_smt>;
++					<0 RK_PC3 RK_FUNC_1 &pcfg_pull_up>;
+ 			};
+ 		};
+ 
